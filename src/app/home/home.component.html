@@ -1,0 +1,39 @@
+
+
+<div class="container">
+  <header>
+    <a routerLink="">
+    <img class= "logo" src="../../assets/logo2.png" alt="Logo">
+    </a>
+    <input type = "checkbox" id="menu-bar" [(ngModel)]="menuOpen">
+    <label for ="menu-bar">Menu</label>
+    <nav class = "navbar">
+      <ul>
+        <li><a routerLink = ""  (click)="closeMenu()">Home</a></li>
+        <li>
+          <a (click)="toggleDropdown($event)">Services
+            <span class="dropdown-arrow" [class.rotate]="dropdownOpen">&#x25BC;</span>
+          </a>
+          <ul *ngIf="dropdownOpen">
+            <li><a routerLink="civil" (click)="closeMenu()">Civil</a></li>
+            <li><a routerLink="architecture" (click)="closeMenu()">Architecture</a></li>
+            <li><a routerLink="mechanical" (click)="closeMenu()">Mechanical</a></li>
+            <li><a routerLink="electrical" (click)="closeMenu()">Electrical</a></li>
+            <li><a routerLink="plumbing" (click)="closeMenu()">Plumbing</a></li>
+          </ul>
+        </li>
+        <li>
+          <a (click)="toggleDropdown($event)">Portfolio
+            <span class="dropdown-arrow" [class.rotate]="dropdownOpen">&#x25BC;</span>
+             </a>
+          <ul *ngIf="dropdownOpen">
+            <li><a routerLink="commercial" (click)="closeMenu()">Commercial</a></li>
+            <li><a routerLink="residential" (click)="closeMenu()">Residential</a></li>
+          </ul>
+        </li>
+    <li><a routerLink="contact" (click)="closeMenu()">Contact </a></li>
+    </ul>
+    </nav>
+  </header>
+  <router-outlet></router-outlet>
+  </div>
