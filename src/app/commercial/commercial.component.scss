@@ -1,0 +1,41 @@
+/* 🔹 Commercial Section Container */
+.commercial-container {
+  margin-top: 15%;
+  padding: 40px 20px;
+  background: linear-gradient(to right, #dfb000, #7c0000);
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+/* 📢 Commercial Introduction */
+.commercial-intro {
+  max-width: 800px;
+  margin: 0 auto;
+  color: white;
+}
+
+.commercial-intro h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.commercial-intro p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 1024px) {
+  .commercial-intro {
+    padding: 20px;
+  }
+
+  .commercial-intro h2 {
+    font-size: 24px;
+  }
+
+  .commercial-intro p {
+    font-size: 16px;
+  }
+}
