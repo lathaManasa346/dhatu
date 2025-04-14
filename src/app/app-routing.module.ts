@@ -9,19 +9,29 @@ import { RouterModule, Routes } from '@angular/router';
 import { CurtainComponent } from './curtain/curtain.component';
 import { HomeComponent } from './home/home.component';
 
-const routes: Routes =[
+const routes: Routes = [
   { path: '', component: HomeComponent },
-  {path:'contact', component: ContactComponent},
-  { path: 'services/eyebrows', component: HomeComponent }, // Change to actual component
-  { path: 'services/makeup', component: HomeComponent },
-    // Change to actual component
-    {path: 'services/civil', component: CivilServicesComponent},
-    {path:'services/architecture', component: ArchitectureComponent},
-    {path:'services/mep', component:MepComponent},
-    {path:'portfolio/commercial', component: CommercialComponent},
-    {path:'porfolio/residential', component: ResidentialComponent},
+  { path: 'contact', component: ContactComponent },
 
-  { path: '**', redirectTo: '' }
+  {
+    path: 'services',
+    children: [
+      { path: 'civil', component: CivilServicesComponent },
+      { path: 'architecture', component: ArchitectureComponent },
+      { path: 'mep', component: MepComponent },
+    ]
+  },
+
+  {
+    path: 'portfolio',
+    children: [
+      { path: 'commercial', component: CommercialComponent },
+      { path: 'residential', component: ResidentialComponent },
+    ]
+  },
+
+  // Optional wildcard redirect
+  // { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 
 @NgModule({

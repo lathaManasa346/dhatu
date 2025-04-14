@@ -19,6 +19,7 @@ import { MepComponent } from './mep/mep.component';
 import { CommercialComponent } from './commercial/commercial.component';
 import { ResidentialComponent } from './residential/residential.component';
 import { ContactComponent } from './contact/contact.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { ContactComponent } from './contact/contact.component';
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
+    BrowserAnimationsModule
 
 
   ],
